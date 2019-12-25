@@ -1,10 +1,10 @@
 /*
-Theme Name: Personal Info
+Theme Name: Personal Info Pro
 Theme URI: https://spiderbuzz.com/wordpress-themes/personal-info-wordpress-theme/
 Author: spiderbuzz 
 Author URI: http://spiderbuzz.com/
-Description: Personal Info WordPress theme is exquisiteness and simplicity helps individuals represent their personal site at ease. A must-have for all individuals looking to exhibit and brand one's personal information. Aided with control from Theme options, the Personal info theme's unique feature is to diaplsy home, contact, portfolio, profile and blogs. All these acquainted with robust in-house responsive framework would serve its purpose to benefit your Biography. Now you can import demo by one click. For more detail: https://spiderbuzz.com/wordpress-themes/personal-info-wordpress-theme/
-Version: 2.2.6
+Description: Personal Info WordPress theme is exquisiteness and simplicity helps individuals represent their personal site at ease. A must-have for all individuals looking to exhibit and brand one's personal information. Aided with control from Theme options, the Personal info theme's unique feature is to diaplsy home, contact, portfolio, profile and blogs. All these acquainted with robust in-house responsive framework would serve its purpose to benefit your Biography. For more detail: https://spiderbuzz.com/wordpress-themes/personal-info-wordpress-theme/
+Version: 2.0-pro
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: personal-info
@@ -14,7 +14,7 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
 Personal Info by SpiderBuzz is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
-Personal Info is distributed under the terms of the GNU GPL v2 or later.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
@@ -1071,7 +1071,7 @@ First we prepare the navigation menu bar
 }
 
 #main-nav   {
-    min-height: 30px;
+    height: 30px;
     margin: 0 0 10px; 
 }
 #main-nav ul{
@@ -1118,9 +1118,11 @@ First we prepare the navigation menu bar
     left: 150px; /* this needs to match the sub menu width set above -- width + padding + borders */
     top: 0; /* this ensures the sub menu starts in line with its parent item */
 }
-.block-grey{
-	overflow:scroll;
+.menu{
+	padding:20px 0 200px 0 !important;
+	
 }
+
 ul.sub-menu {
     margin-left: 30px !important;
 }
@@ -1164,7 +1166,7 @@ label{
 }
 
 .work-slide-owl-wrapper{
-	width: 3048px; 
+	width: 100%;
 	left: 0px; 
 	display: block;
 }
@@ -1175,4 +1177,20 @@ label{
 .work-slide-owl-theme{
 	opacity: 1; 
 	display: block;
+}
+#personal-ajax-content{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	display: none;
+}
+.ajax-loader {
+    height: 200px;
+    width: 200px;
+    position: relative;
+    left: 45%;
+    background: url(img/progress.gif);
+    top: 45%;
+    background-size: cover;
 }

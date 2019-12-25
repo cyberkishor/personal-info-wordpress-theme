@@ -1499,6 +1499,7 @@ hr {
 .h3,
 .h4,
 .h5,
+.,
 h1,
 h2,
 h3,
@@ -11774,6 +11775,11 @@ a:active {
     margin-right: 30px;
     float: left;
 }
+.head .page-title-image{
+    height: 85px;
+    width: 85px;
+    border-radius: 50%;
+}
 
 .head .btn-close {
     width: 36px;
@@ -12167,9 +12173,9 @@ strong.focused {
 }
 
 .info .circle-block .icon {
-    width: 90px;
-    height: 90px;
-    line-height: 90px;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
     text-align: center;
     font-size: 30px;
     border-style: solid;
@@ -12704,10 +12710,8 @@ body {
 }
 
 .footer .copyright {
-    color: #c5c5c5;
-	font-size:13px;
+    color: #c5c5c5
 }
-
 
 .head {
     border-bottom-color: #C6C6C6
@@ -12854,13 +12858,10 @@ body {
 .map {
     border-color: #dfdfdf
 }
-.info .circle-block:last-child {
-    margin-right: 0;
-}
+
 .info .circle-block .icon {
     color: #0abaf9;
-    border-color: #e9e9e9;
-		margin-right:15px;
+    border-color: #e9e9e9
 }
 
 .info .circle-block:hover .icon {

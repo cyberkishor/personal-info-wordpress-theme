@@ -1,7 +1,7 @@
 <?php
 //Register Meta Box
 function personal_info_hardskill_meta_box() {
-    add_meta_box( 'personal_info_hardskill_meta_box', esc_html__( 'Hardskill ', 'personal-info' ), 'personal_info_hardskill_box_callback', 'page', 'advanced', 'high' );
+    add_meta_box( 'personal_info_hardskill_meta_box', esc_html__( 'Sparkle Hardskill ', 'personal-info' ), 'personal_info_hardskill_box_callback', 'page', 'advanced', 'high' );
 }
 add_action( 'add_meta_boxes', 'personal_info_hardskill_meta_box');
  

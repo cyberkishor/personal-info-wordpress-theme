@@ -15,6 +15,7 @@ require get_template_directory().'/inc/meta-box/profile-working-meta-box.php';
 require get_template_directory().'/inc/meta-box/profile-what-im-doing-meta-box.php';
 //resume  education metabox
 require get_template_directory().'/inc/meta-box/resume-education-meta-box.php';
+require get_template_directory().'/inc/meta-box/page-title.php';
 
 function enqueue_files() {
 	wp_enqueue_script( 'metabox-js', get_template_directory_uri().'/js/admin/meta-box.js', array('jquery'), '20170925', true );

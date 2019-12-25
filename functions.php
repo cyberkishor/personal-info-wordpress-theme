@@ -104,6 +104,7 @@ function perosnal_info_scripts() {
 	wp_enqueue_script( 'perosnal-info-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'perosnal-info-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	
+	wp_enqueue_script( 'perosnal-info-js', get_template_directory_uri() . '/js/personal-info.js', array('jquery'), '20151215', true );
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -145,12 +146,6 @@ require get_template_directory() . '/inc/customizer.php';
  * Plugins TGM
  */
  require get_template_directory() ."/inc/class-tgm-plugin-activation.php";
-
- /**
- * Demo Import Options
- */
-require get_template_directory() ."/inc/demo-import/demo-import.php";
-
 
 /**
  * Load Jetpack compatibility file.
@@ -194,17 +189,8 @@ function perosnal_info_register_required_plugins() {
 			'name'      => 'Menu Image',
 			'slug'      => 'menu-image',
 			'required'  => false,
-		),
-		array(
-			'name'      => 'Meta box',
-			'slug'      => 'meta-box',
-			'required'  => true,
-		),
-		array(
-            'name' => esc_attr__( 'One Click Demo Import', 'personal-info'),
-            'slug' => 'one-click-demo-import',
-            'required' => true,
-        ),
+		)
+		
 	);
 
 	/*
@@ -225,8 +211,4 @@ function perosnal_info_register_required_plugins() {
 	tgmpa( $plugins, $config );
 }
 
-include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-if(is_plugin_active( 'meta-box/meta-box.php' ))
-{
-	require get_template_directory().'/inc/meta-box/init.php';
-}
+require get_template_directory().'/inc/meta-box/init.php';

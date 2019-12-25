@@ -11,11 +11,7 @@ get_header(); ?>
             <!-- start row -->
             <div class="row">
                 <div class="col-xs-8 col-sm-11 col-lg-11">
-                    <img class="logo-page" src="<?php echo esc_url( get_template_directory_uri() ) ?>/inc/img/resume.png" alt="Resume">
-                    <!-- Title Page -->
-                    <h2 class="title"><?php esc_html_e('Resume','personal-info');  ?></h2>
-                    <!-- Description Page -->
-                    <h4 class="sub-title"><?php esc_html_e('My Qualifications','personal-info');  ?></h4>
+                    <?php personal_info_page_title_info(); ?>
                 </div>
                 <div class="col-xs-4 col-sm-1 col-lg-1 text-right">
                     <a href="<?php echo esc_url(home_url('/')); ?>" class="btn-close hover-animate"><img class="logo-page" src="<?php echo esc_url( get_template_directory_uri() ) ?>/inc/img/close.svg" ></a>

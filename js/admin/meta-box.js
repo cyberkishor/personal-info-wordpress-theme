@@ -23,29 +23,17 @@ jQuery(document).ready(function($){
 		jQuery("#work_hidden_field").val('');
 	}
 
-	
-
-	
+	var element = $('#page_template');
+	var page_template = element.val();
+	element.trigger("change");
 	setTimeout(function(){
-		var element = $('.editor-page-attributes__template .components-select-control__input');
-		var page_template = $('#personal_info_template_val').val();
-		personal_info_event(page_template);
+		element.trigger("change");
+	},100)
+	element.change(function(){
+		page_template = $(this).val();
 
-		element.change(function(){
-			page_template = $(this).val();
-
-			//new new
-			$( "#personal_info_template_val" ).attr( "value", page_template );
-
-			//console.log('after some time ', page_template);
-			personal_info_event(page_template);
-			
-		})
-	},2000)
-
-
-	function personal_info_event(page_template){
 		switch(page_template){
+
 			case"page-templates/contact.php":
 				hideAllMetaBox();
 				metabox.find("#personal_info_contact_meta_box").show();
@@ -86,13 +74,9 @@ jQuery(document).ready(function($){
 				break;
 			default:
 				hideAllMetaBox();
+				
 		}
-	}
-
-
-	
-
-	
+	})
 
 /**
  * Repeator Field
@@ -144,15 +128,48 @@ jQuery(document).ready(function($){
  		if( jQuery(".table_what_im_doing").find("tr.repeater_what_im_doing_profile").length > 1){
  			jQuery(this).parents('tr').remove();
  		}
-	 })
-	 
-	 jQuery(document).on('load', '.editor-page-attributes__template .components-select-control__input',function(){
-		jQuery(this).trigger("change");
-	})
-
-
-	
-
+ 	})
  	
- 	
+ 	jQuery( document ).ready( function( $ ) {
+			// Uploading files
+			var file_frame;
+			var wp_media_post_id = wp.media.model.settings.post.url; // Store the old id
+			var set_to_post_id = "";
+			jQuery('#upload_image_button').on('click', function( event ){
+				event.preventDefault();
+				// If the media frame already exists, reopen it.
+				if ( file_frame ) {
+					// Set the post ID to what we want
+					file_frame.uploader.uploader.param( 'post_id', set_to_post_id );
+					// Open frame
+					file_frame.open();
+					return;
+				} else {
+					// Set the wp.media post id so the uploader grabs the ID we want when initialised
+					wp.media.model.settings.post.id = set_to_post_id;
+				}
+				// Create the media frame.
+				file_frame = wp.media.frames.file_frame = wp.media({
+					title: 'Select a image to upload',
+					button: {
+						text: 'Use this image',
+					},
+					multiple: false	// Set to true to allow multiple files to be selected
+				});
+				// When an image is selected, run a callback.
+				file_frame.on( 'select', function() {
+					// We set multiple to false so only get one image from the uploader
+					attachment = file_frame.state().get('selection').first().toJSON();
+					// Do something with attachment.id and/or attachment.url here
+					$( '#image-preview' ).attr( 'src', attachment.url ).parent().removeClass('hidden');
+					$( '#title_image_upload_button' ).val( attachment.url );
+					// Restore the main post ID
+					wp.media.model.settings.post.id = wp_media_post_id;
+				});
+					// Finally, open the modal
+					file_frame.open();
+			});
+			
+		});
+
 });

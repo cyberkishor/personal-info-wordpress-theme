@@ -2,7 +2,7 @@
 
 //Register Meta Boxsdf
 function personal_info_contact_meta_box() {
-    add_meta_box( 'personal_info_contact_meta_box', esc_html__( 'Personal Info Contact ','personal-info'  ), 'personal_info_contact_box_callback', 'page', 'advanced', 'high' );
+    add_meta_box( 'personal_info_contact_meta_box', esc_html__( 'Sparkle Contact ','personal-info'  ), 'personal_info_contact_box_callback', 'page', 'advanced', 'high' );
 }
 add_action( 'add_meta_boxes', 'personal_info_contact_meta_box');
 
@@ -29,15 +29,7 @@ function personal_info_contact_box_callback( $meta_id ) {
 
     $outline .= '<br><label for="contact_website" style="width:150px; display:inline-block;">'. esc_html__('Website', 'personal-info') .'</label>';
      $outline .= '<input type="text" name="personal_info_contact_info[website]" id="contact_website" class="contact_website" value="'. esc_attr($contact_info->website) .'" style="width:300px;"/>';
-     
-     
-    global $post;
-    $contact_val_new = get_post_meta( $post->ID, '_wp_page_template', true );
-    
-     $outline .= "<input type='hidden' name='personal_info_template_val' id='personal_info_template_val' value='". esc_attr($contact_val_new)."' >";
      $outline .= '</div>';
-
-     
     echo $outline;
 }
 
@@ -64,13 +56,8 @@ function personal_info_save_contact_metabox( $post_id ) {
         // Sanitize the user input.
         $contact_address = sanitize_text_field( json_encode($_POST['personal_info_contact_info'] ));
       
-        
-        
+
+        // Update the meta field.
         update_post_meta( $post_id, 'personal_info_contact_info', $contact_address );
     }
-
-    // Update the meta field.
-    $personal_info_template_val = sanitize_text_field( $_POST['personal_info_template_val'] );
-      
-    update_post_meta( $post_id, 'personal_info_template_val', $personal_info_template_val );
 }

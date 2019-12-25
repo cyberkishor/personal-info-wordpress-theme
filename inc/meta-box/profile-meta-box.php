@@ -1,7 +1,7 @@
 <?php
 //Register Meta Box
 function personal_info_profile_meta_box() {
-    add_meta_box( 'personal_info_profile_meta_box', esc_html__( 'Profile ', 'personal-info' ), 'personal_info_profile_box_callback', 'page', 'advanced', 'high' );
+    add_meta_box( 'personal_info_profile_meta_box', esc_html__( 'Sparkle Profile ', 'personal-info' ), 'personal_info_profile_box_callback', 'page', 'advanced', 'high' );
 }
 add_action( 'add_meta_boxes', 'personal_info_profile_meta_box');
  

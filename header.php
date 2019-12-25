@@ -12,17 +12,11 @@
 <html   <?php language_attributes(); ?>>
 <head>
 <meta http-equiv="Content-Type" content="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>"> 
 <?php wp_head(); ?>
 
 </head>
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-	<div id="page" class="site  <?php echo esc_attr($relic_edd_store_header_layout_select); ?>">
-	<a class="skip-link screen-reader-text" href="#content">
-	<?php _e( 'Skip to content', 'personal-info' ); ?></a>
-
 <div id="wraper">
     <?php if( perosnal_info_is_blog() or is_front_page() or is_page_template('page-templates/home.php')) : ?>
     <!-- Start Home-header section -->
@@ -100,8 +94,6 @@
         </div>
         <!-- end container -->
     </nav>
-
-    <div id="content" class="site-content">
 
     <!-- End Menu section -->
     <?php elseif( !is_page_template() and !is_search()): ?>

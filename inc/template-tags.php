@@ -120,3 +120,29 @@ function perosnal_info_category_transient_flusher() {
 }
 add_action( 'edit_category', 'perosnal_info_category_transient_flusher' );
 add_action( 'save_post',     'perosnal_info_category_transient_flusher' );
+
+
+
+function personal_info_page_title_info(){
+	global $post;
+	$personal_page_info = json_decode(get_post_meta( $post->ID, 'personal_page_info', true ));
+    if( !$personal_page_info ) {
+        $personal_page_info = (object) array('subtitle' => "",'title_image'=>"");
+    }
+    if( $personal_page_info->title_image == '') {
+    	$image = esc_url( get_template_directory_uri() ) ."/inc/img/portfolio.png";
+    }else{
+    	$image = esc_url($personal_page_info->title_image);
+    }
+	?>
+	
+	<img class="logo-page page-title-image" src="<?php echo $image; ?>" alt="portfolio">
+     
+    <h2 class="title"><?php the_title();  ?></h2>
+    <!-- Description Page -->
+    <?php if( $personal_page_info->subtitle ){ ?>
+    	<h4 class="sub-title"><?php echo $personal_page_info->subtitle;  ?></h4>
+	<?php }
+}
+
+

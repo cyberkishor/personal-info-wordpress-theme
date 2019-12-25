@@ -4,8 +4,8 @@ Contributors: spiderbuzz
 Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments , portfolio
 
 Requires at least: 4.0
-Tested up to: 4.9.8
-Stable tag: 2.2.6
+Tested up to: 4.9.1
+Stable tag: 2.0
 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -71,34 +71,6 @@ Personal Info by SpiderBuzz includes support for Infinite Scroll in Jetpack.
 == 2.0 - Dec 7 2017 ==
 * Removed Unwanted code
 
-== 2.1 - Apr 17 2018 ==
-* Meta tag view port added
-* Menu css and table css added
-
-== 2.2 - June 11 2018 ==
-* add the demo import options
-
-== 2.2.1 - August 19 2018 ==
-* change the screenshot
-
-== 2.2.2 - January 15 2019 ==
-* change the screenshot
-
-
-== 2.2.3 - January 20 2019 ==
-* fix the programming issues
-
-= 2.2.4 - January 20 2019 =
-* add elementor plugins compatible
-
-
-= 2.2.5 - June 24 2019 =
-* fixed the metabox javascript issues
-
-= 2.2.6 - July 19 2019 =
-* add the skip link
-
-
 == License ==
 The exceptions to license are as follows:
 
@@ -109,8 +81,11 @@ Created by @davegandy, http://fontawesome.io - @fontawesome
 MIT License: http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 
 Image used in screenshot
-https://stocksnap.io/photo/QKW5BYR0Q2       |   License CC0 Public Domain
-
+https://cdn.pixabay.com/photo/2016/04/26/12/25/male-1354358_960_720.png             License CC0 Public Domain
+https://cdn.pixabay.com/photo/2016/11/05/11/15/resume-1799953_960_720.png           License CC0 Public Domain
+https://cdn.pixabay.com/photo/2016/10/10/01/49/leave-1727488_960_720.png            License CC0 Public Domain
+https://cdn.pixabay.com/photo/2017/06/26/17/06/symbol-2444430_960_720.png           License CC0 Public Domain
+https://cdn.pixabay.com/photo/2016/12/15/12/24/contact-us-1908762_960_720.png       License CC0 Public Domain
 
 TGM-Plugin-Activation
 Copyright (c) 2011, Thomas Griffin
