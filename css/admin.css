@@ -1,0 +1,29 @@
+.metabox-label {
+	width:150px !important;
+	display:inline-block !important;
+	}
+
+
+.metabox_input[type=text] {
+    width:300px;
+}
+.metabox_input[type=email] {
+    width:300px;
+}
+
+.metabox_input[type=textarea] {
+    width:300px;
+}
+.metabox_label_style{
+    width:150px;
+    text-align:center;
+    display:inline-block;
+}
+
+.metabox .tgmp_h2{
+font-size: 23px;
+font-weight: 400; 
+line-height: 29px; 
+margin: 0; 
+padding: 9px 15px 4px 0;
+}
